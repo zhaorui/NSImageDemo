@@ -13,6 +13,7 @@
 		C50781661E8010CD00A42AD8 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C50781641E8010CD00A42AD8 /* Main.storyboard */; };
 		C50781711E8010CD00A42AD8 /* NSImageDemoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C50781701E8010CD00A42AD8 /* NSImageDemoTests.swift */; };
 		C507817C1E8010CD00A42AD8 /* NSImageDemoUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C507817B1E8010CD00A42AD8 /* NSImageDemoUITests.swift */; };
+		C5C7FDD91E80338D00911FBE /* ImageDemoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5C7FDD81E80338D00911FBE /* ImageDemoView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -45,6 +46,7 @@
 		C50781771E8010CD00A42AD8 /* NSImageDemoUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = NSImageDemoUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		C507817B1E8010CD00A42AD8 /* NSImageDemoUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSImageDemoUITests.swift; sourceTree = "<group>"; };
 		C507817D1E8010CD00A42AD8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C5C7FDD81E80338D00911FBE /* ImageDemoView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageDemoView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,6 +101,7 @@
 				C50781601E8010CD00A42AD8 /* ViewController.swift */,
 				C50781621E8010CD00A42AD8 /* Assets.xcassets */,
 				C50781641E8010CD00A42AD8 /* Main.storyboard */,
+				C5C7FDD81E80338D00911FBE /* ImageDemoView.swift */,
 				C50781671E8010CD00A42AD8 /* Info.plist */,
 			);
 			path = NSImageDemo;
@@ -259,6 +262,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				C50781611E8010CD00A42AD8 /* ViewController.swift in Sources */,
+				C5C7FDD91E80338D00911FBE /* ImageDemoView.swift in Sources */,
 				C507815F1E8010CD00A42AD8 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -505,6 +509,7 @@
 				C50781821E8010CD00A42AD8 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		C50781831E8010CD00A42AD8 /* Build configuration list for PBXNativeTarget "NSImageDemoTests" */ = {
 			isa = XCConfigurationList;
@@ -513,6 +518,7 @@
 				C50781851E8010CD00A42AD8 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		C50781861E8010CD00A42AD8 /* Build configuration list for PBXNativeTarget "NSImageDemoUITests" */ = {
 			isa = XCConfigurationList;
@@ -521,6 +527,7 @@
 				C50781881E8010CD00A42AD8 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

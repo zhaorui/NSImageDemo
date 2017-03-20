@@ -10,10 +10,17 @@ import Cocoa
 
 class ViewController: NSViewController {
 
+  
+  // why var->let would cause compile err?
+  var image_view : NSImageView?
+  
   override func viewDidLoad() {
     super.viewDidLoad()
-
-    // Do any additional setup after loading the view.
+    
+    
+//    image_view = NSImageView(image: small_image)
+//    image_view?.frame.origin = NSMakePoint((NSMidX(self.view.bounds) - NSMidX((image_view?.bounds)!)) / 2, (NSMidY(self.view.bounds)-NSMidY((image_view?.bounds)!))/2)
+//    self.view.addSubview(image_view!)
   }
 
   override var representedObject: Any? {
