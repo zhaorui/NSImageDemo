@@ -12,7 +12,8 @@ class ImageDemoView: NSView {
 
     static let image_square_edge : CGFloat = 100.0
     static let intersect_square_edge :CGFloat = image_square_edge / 2.0
-    
+    var top_left_operation : NSCompositingOperation = .clear
+    var bottom_right_operation : NSCompositingOperation = .clear
     
     var top_left_image_origin : NSPoint {
         get {
@@ -53,11 +54,11 @@ class ImageDemoView: NSView {
     override func draw(_ dirtyRect: NSRect) {
         super.draw(dirtyRect)
         
-        NSColor.green.set()
-        NSBezierPath(rect: dirtyRect).fill()
+        //NSColor.green.set()
+        //NSBezierPath(rect: dirtyRect).fill()
         
-        swift_medium_image.draw(at: top_left_image_origin, from: NSZeroRect, operation: .sourceOver, fraction: 1.0)
-        cpp_medium_image.draw(at: bottom_right_image_origin, from: NSZeroRect, operation:.sourceOver , fraction: 1.0)
+        swift_medium_image.draw(at: top_left_image_origin, from: NSZeroRect, operation: top_left_operation, fraction: 1.0)
+        cpp_medium_image.draw(at: bottom_right_image_origin, from: NSZeroRect, operation: bottom_right_operation, fraction: 1.0)
     }
     
 }

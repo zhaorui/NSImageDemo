@@ -3,6 +3,7 @@
     <dependencies>
         <deployment identifier="macosx"/>
         <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="11542"/>
+        <capability name="box content view" minToolsVersion="7.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -683,36 +684,335 @@
             <objects>
                 <viewController id="XfG-lQ-9wD" customClass="ViewController" customModule="NSImageDemo" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" wantsLayer="YES" id="m2S-Jp-Qdl">
-                        <rect key="frame" x="0.0" y="0.0" width="546" height="392"/>
+                        <rect key="frame" x="0.0" y="0.0" width="713" height="392"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <subviews>
                             <customView translatesAutoresizingMaskIntoConstraints="NO" id="ODL-kq-28H" customClass="ImageDemoView" customModule="NSImageDemo" customModuleProvider="target">
                                 <rect key="frame" x="20" y="72" width="300" height="300"/>
-                                <subviews>
-                                    <customView fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ohP-z1-957">
-                                        <rect key="frame" x="63" y="122" width="100" height="100"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                                    </customView>
-                                    <customView fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="zKo-UT-eIn">
-                                        <rect key="frame" x="121" y="71" width="100" height="100"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                                    </customView>
-                                </subviews>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="300" id="Yuj-nv-IbP"/>
                                     <constraint firstAttribute="height" constant="300" id="ZuB-Hh-5Wb"/>
                                 </constraints>
                             </customView>
+                            <box identifier="top-left" autoresizesSubviews="NO" fixedFrame="YES" borderType="line" title="top-left" translatesAutoresizingMaskIntoConstraints="NO" id="hdG-nF-gWB">
+                                <rect key="frame" x="325" y="52" width="158" height="336"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                <view key="contentView" id="r1P-dr-MI7">
+                                    <rect key="frame" x="1" y="1" width="156" height="320"/>
+                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                    <subviews>
+                                        <button identifier="destinationOut" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="VXi-Py-ALZ">
+                                            <rect key="frame" x="19" y="107" width="112" height="18"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                            <buttonCell key="cell" type="radio" title="destinationOut" bezelStyle="regularSquare" imagePosition="left" alignment="left" inset="2" id="1AC-Ao-eI7">
+                                                <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                                                <font key="font" metaFont="system"/>
+                                            </buttonCell>
+                                            <connections>
+                                                <action selector="switchCompositingOperation:" target="XfG-lQ-9wD" id="dDO-eG-5GN"/>
+                                            </connections>
+                                        </button>
+                                        <button identifier="sourceOver" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="R1p-Ra-RJj">
+                                            <rect key="frame" x="19" y="239" width="92" height="18"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                            <buttonCell key="cell" type="radio" title="sourceOver" bezelStyle="regularSquare" imagePosition="left" alignment="left" inset="2" id="Pvc-MO-K8R">
+                                                <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                                                <font key="font" metaFont="system"/>
+                                            </buttonCell>
+                                            <connections>
+                                                <action selector="switchCompositingOperation:" target="XfG-lQ-9wD" id="1Sc-FF-g2J"/>
+                                            </connections>
+                                        </button>
+                                        <button identifier="copy" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="p5s-5I-h4n">
+                                            <rect key="frame" x="19" y="261" width="52" height="18"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                            <buttonCell key="cell" type="radio" title="copy" bezelStyle="regularSquare" imagePosition="left" alignment="left" inset="2" id="iZm-wu-PFQ">
+                                                <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                                                <font key="font" metaFont="system"/>
+                                            </buttonCell>
+                                            <connections>
+                                                <action selector="switchCompositingOperation:" target="XfG-lQ-9wD" id="MH7-RW-dAD"/>
+                                            </connections>
+                                        </button>
+                                        <button identifier="destinationIn" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="9A6-io-q2Z">
+                                            <rect key="frame" x="19" y="129" width="101" height="18"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                            <buttonCell key="cell" type="radio" title="destinationIn" bezelStyle="regularSquare" imagePosition="left" alignment="left" inset="2" id="9Nm-tI-anJ">
+                                                <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                                                <font key="font" metaFont="system"/>
+                                            </buttonCell>
+                                            <connections>
+                                                <action selector="switchCompositingOperation:" target="XfG-lQ-9wD" id="0xB-ma-h6i"/>
+                                            </connections>
+                                        </button>
+                                        <button identifier="destinationAtop" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="O6H-5y-LrC">
+                                            <rect key="frame" x="19" y="85" width="118" height="18"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                            <buttonCell key="cell" type="radio" title="destinationAtop" bezelStyle="regularSquare" imagePosition="left" alignment="left" inset="2" id="8pJ-mE-NXA">
+                                                <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                                                <font key="font" metaFont="system"/>
+                                            </buttonCell>
+                                            <connections>
+                                                <action selector="switchCompositingOperation:" target="XfG-lQ-9wD" id="U2p-KP-6jv"/>
+                                            </connections>
+                                        </button>
+                                        <button identifier="XOR" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Pqv-J7-9QA">
+                                            <rect key="frame" x="19" y="63" width="49" height="18"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                            <buttonCell key="cell" type="radio" title="XOR" bezelStyle="regularSquare" imagePosition="left" alignment="left" inset="2" id="Rak-gq-Wpd">
+                                                <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                                                <font key="font" metaFont="system"/>
+                                            </buttonCell>
+                                            <connections>
+                                                <action selector="switchCompositingOperation:" target="XfG-lQ-9wD" id="EiR-kQ-04p"/>
+                                            </connections>
+                                        </button>
+                                        <button identifier="clear" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ny8-pu-wKg">
+                                            <rect key="frame" x="19" y="283" width="52" height="18"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                            <buttonCell key="cell" type="radio" title="clear" bezelStyle="regularSquare" imagePosition="left" alignment="left" state="on" inset="2" id="NXd-2n-GU2">
+                                                <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                                                <font key="font" metaFont="system"/>
+                                            </buttonCell>
+                                            <connections>
+                                                <action selector="switchCompositingOperation:" target="XfG-lQ-9wD" id="eWp-qZ-spg"/>
+                                            </connections>
+                                        </button>
+                                        <button identifier="plusLighter" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="mir-Yh-hHG">
+                                            <rect key="frame" x="19" y="19" width="90" height="18"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                            <buttonCell key="cell" type="radio" title="plusLighter" bezelStyle="regularSquare" imagePosition="left" alignment="left" inset="2" id="0fh-iE-oC4">
+                                                <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                                                <font key="font" metaFont="system"/>
+                                            </buttonCell>
+                                            <connections>
+                                                <action selector="switchCompositingOperation:" target="XfG-lQ-9wD" id="1ZC-vM-hrN"/>
+                                            </connections>
+                                        </button>
+                                        <button identifier="sourceIn" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Brk-f1-5K3">
+                                            <rect key="frame" x="19" y="217" width="74" height="18"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                            <buttonCell key="cell" type="radio" title="sourceIn" bezelStyle="regularSquare" imagePosition="left" alignment="left" inset="2" id="Aan-Wr-LcQ">
+                                                <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                                                <font key="font" metaFont="system"/>
+                                            </buttonCell>
+                                            <connections>
+                                                <action selector="switchCompositingOperation:" target="XfG-lQ-9wD" id="zEg-FM-h0c"/>
+                                            </connections>
+                                        </button>
+                                        <button identifier="sourceAtop" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="GC4-AP-45h">
+                                            <rect key="frame" x="19" y="173" width="92" height="18"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                            <buttonCell key="cell" type="radio" title="sourceAtop" bezelStyle="regularSquare" imagePosition="left" alignment="left" inset="2" id="j5V-bG-X1i">
+                                                <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                                                <font key="font" metaFont="system"/>
+                                            </buttonCell>
+                                            <connections>
+                                                <action selector="switchCompositingOperation:" target="XfG-lQ-9wD" id="hJd-vl-UWC"/>
+                                            </connections>
+                                        </button>
+                                        <button identifier="destinationOver" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="jox-db-6eW">
+                                            <rect key="frame" x="19" y="151" width="119" height="18"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                            <buttonCell key="cell" type="radio" title="destinationOver" bezelStyle="regularSquare" imagePosition="left" alignment="left" inset="2" id="YhM-nI-Yy1">
+                                                <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                                                <font key="font" metaFont="system"/>
+                                            </buttonCell>
+                                            <connections>
+                                                <action selector="switchCompositingOperation:" target="XfG-lQ-9wD" id="UfD-i2-s9c"/>
+                                            </connections>
+                                        </button>
+                                        <button identifier="sourceOut" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="CJT-YW-Ly6">
+                                            <rect key="frame" x="19" y="195" width="86" height="18"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                            <buttonCell key="cell" type="radio" title="sourceOut" bezelStyle="regularSquare" imagePosition="left" alignment="left" inset="2" id="Ffb-fy-Exb">
+                                                <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                                                <font key="font" metaFont="system"/>
+                                            </buttonCell>
+                                            <connections>
+                                                <action selector="switchCompositingOperation:" target="XfG-lQ-9wD" id="OMB-5I-7Uy"/>
+                                            </connections>
+                                        </button>
+                                        <button identifier="plusDarker" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="WNh-3K-t1g">
+                                            <rect key="frame" x="19" y="41" width="88" height="18"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                            <buttonCell key="cell" type="radio" title="plusDarker" bezelStyle="regularSquare" imagePosition="left" alignment="left" inset="2" id="sBx-UZ-0i9">
+                                                <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                                                <font key="font" metaFont="system"/>
+                                            </buttonCell>
+                                            <connections>
+                                                <action selector="switchCompositingOperation:" target="XfG-lQ-9wD" id="mHT-6D-6T8"/>
+                                            </connections>
+                                        </button>
+                                    </subviews>
+                                </view>
+                            </box>
+                            <box identifier="bottom-right" autoresizesSubviews="NO" fixedFrame="YES" borderType="line" title="bottom-right" translatesAutoresizingMaskIntoConstraints="NO" id="u3v-HZ-hEn">
+                                <rect key="frame" x="485" y="52" width="158" height="336"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                <view key="contentView" id="00N-1J-IeA">
+                                    <rect key="frame" x="1" y="1" width="156" height="320"/>
+                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                    <subviews>
+                                        <button identifier="destinationOut" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="xBK-AB-Cw5">
+                                            <rect key="frame" x="19" y="107" width="112" height="18"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                            <buttonCell key="cell" type="radio" title="destinationOut" bezelStyle="regularSquare" imagePosition="left" alignment="left" inset="2" id="tgI-sj-Deg">
+                                                <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                                                <font key="font" metaFont="system"/>
+                                            </buttonCell>
+                                            <connections>
+                                                <action selector="switchCompositingOperation:" target="XfG-lQ-9wD" id="J5c-km-2Og"/>
+                                            </connections>
+                                        </button>
+                                        <button identifier="sourceOver" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="bB3-TC-AUo">
+                                            <rect key="frame" x="19" y="239" width="92" height="18"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                            <buttonCell key="cell" type="radio" title="sourceOver" bezelStyle="regularSquare" imagePosition="left" alignment="left" inset="2" id="RkV-HG-Blx">
+                                                <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                                                <font key="font" metaFont="system"/>
+                                            </buttonCell>
+                                            <connections>
+                                                <action selector="switchCompositingOperation:" target="XfG-lQ-9wD" id="bX2-wt-1x1"/>
+                                            </connections>
+                                        </button>
+                                        <button identifier="copy" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="IaD-0g-fTJ">
+                                            <rect key="frame" x="19" y="261" width="52" height="18"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                            <buttonCell key="cell" type="radio" title="copy" bezelStyle="regularSquare" imagePosition="left" alignment="left" inset="2" id="ywV-jk-UJ5">
+                                                <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                                                <font key="font" metaFont="system"/>
+                                            </buttonCell>
+                                            <connections>
+                                                <action selector="switchCompositingOperation:" target="XfG-lQ-9wD" id="jVZ-21-3td"/>
+                                            </connections>
+                                        </button>
+                                        <button identifier="destinationIn" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="XgL-xz-JUe">
+                                            <rect key="frame" x="19" y="129" width="101" height="18"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                            <buttonCell key="cell" type="radio" title="destinationIn" bezelStyle="regularSquare" imagePosition="left" alignment="left" inset="2" id="B8j-jb-IMW">
+                                                <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                                                <font key="font" metaFont="system"/>
+                                            </buttonCell>
+                                            <connections>
+                                                <action selector="switchCompositingOperation:" target="XfG-lQ-9wD" id="5du-hl-TfJ"/>
+                                            </connections>
+                                        </button>
+                                        <button identifier="destinationAtop" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="OSV-IU-hOl">
+                                            <rect key="frame" x="19" y="85" width="118" height="18"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                            <buttonCell key="cell" type="radio" title="destinationAtop" bezelStyle="regularSquare" imagePosition="left" alignment="left" inset="2" id="xiC-HO-S4W">
+                                                <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                                                <font key="font" metaFont="system"/>
+                                            </buttonCell>
+                                            <connections>
+                                                <action selector="switchCompositingOperation:" target="XfG-lQ-9wD" id="4Su-fs-feX"/>
+                                            </connections>
+                                        </button>
+                                        <button identifier="XOR" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="JKa-CY-sr5">
+                                            <rect key="frame" x="19" y="63" width="49" height="18"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                            <buttonCell key="cell" type="radio" title="XOR" bezelStyle="regularSquare" imagePosition="left" alignment="left" inset="2" id="Bci-FM-ELo">
+                                                <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                                                <font key="font" metaFont="system"/>
+                                            </buttonCell>
+                                            <connections>
+                                                <action selector="switchCompositingOperation:" target="XfG-lQ-9wD" id="FDh-Ed-HmN"/>
+                                            </connections>
+                                        </button>
+                                        <button identifier="clear" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Ry0-GB-0Iy">
+                                            <rect key="frame" x="19" y="283" width="52" height="18"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                            <buttonCell key="cell" type="radio" title="clear" bezelStyle="regularSquare" imagePosition="left" alignment="left" state="on" inset="2" id="LOF-f9-bes">
+                                                <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                                                <font key="font" metaFont="system"/>
+                                            </buttonCell>
+                                            <connections>
+                                                <action selector="switchCompositingOperation:" target="XfG-lQ-9wD" id="Ifc-Gv-7B3"/>
+                                            </connections>
+                                        </button>
+                                        <button identifier="plusLighter" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="5el-1U-Lpx">
+                                            <rect key="frame" x="19" y="19" width="90" height="18"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                            <buttonCell key="cell" type="radio" title="plusLighter" bezelStyle="regularSquare" imagePosition="left" alignment="left" inset="2" id="HsQ-WD-Zn0">
+                                                <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                                                <font key="font" metaFont="system"/>
+                                            </buttonCell>
+                                            <connections>
+                                                <action selector="switchCompositingOperation:" target="XfG-lQ-9wD" id="pWP-KZ-PAN"/>
+                                            </connections>
+                                        </button>
+                                        <button identifier="sourceIn" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Z2J-3o-fzV">
+                                            <rect key="frame" x="19" y="217" width="74" height="18"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                            <buttonCell key="cell" type="radio" title="sourceIn" bezelStyle="regularSquare" imagePosition="left" alignment="left" inset="2" id="Gz1-g0-kPS">
+                                                <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                                                <font key="font" metaFont="system"/>
+                                            </buttonCell>
+                                            <connections>
+                                                <action selector="switchCompositingOperation:" target="XfG-lQ-9wD" id="37H-0U-zQx"/>
+                                            </connections>
+                                        </button>
+                                        <button identifier="sourceAtop" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="L5d-MZ-OfE">
+                                            <rect key="frame" x="19" y="173" width="92" height="18"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                            <buttonCell key="cell" type="radio" title="sourceAtop" bezelStyle="regularSquare" imagePosition="left" alignment="left" inset="2" id="EdC-C3-HSN">
+                                                <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                                                <font key="font" metaFont="system"/>
+                                            </buttonCell>
+                                            <connections>
+                                                <action selector="switchCompositingOperation:" target="XfG-lQ-9wD" id="fFi-dv-ClN"/>
+                                            </connections>
+                                        </button>
+                                        <button identifier="destinationOver" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="0C1-RH-CeK">
+                                            <rect key="frame" x="19" y="151" width="119" height="18"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                            <buttonCell key="cell" type="radio" title="destinationOver" bezelStyle="regularSquare" imagePosition="left" alignment="left" inset="2" id="s1X-nn-Ss2">
+                                                <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                                                <font key="font" metaFont="system"/>
+                                            </buttonCell>
+                                            <connections>
+                                                <action selector="switchCompositingOperation:" target="XfG-lQ-9wD" id="ZYQ-6J-Qxd"/>
+                                            </connections>
+                                        </button>
+                                        <button identifier="sourceOut" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="GFC-FB-Qvk">
+                                            <rect key="frame" x="19" y="195" width="86" height="18"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                            <buttonCell key="cell" type="radio" title="sourceOut" bezelStyle="regularSquare" imagePosition="left" alignment="left" inset="2" id="3tH-c2-hQ9">
+                                                <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                                                <font key="font" metaFont="system"/>
+                                            </buttonCell>
+                                            <connections>
+                                                <action selector="switchCompositingOperation:" target="XfG-lQ-9wD" id="5fT-nd-bIu"/>
+                                            </connections>
+                                        </button>
+                                        <button identifier="plusDarker" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="05O-gV-JjN">
+                                            <rect key="frame" x="19" y="41" width="88" height="18"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                            <buttonCell key="cell" type="radio" title="plusDarker" bezelStyle="regularSquare" imagePosition="left" alignment="left" inset="2" id="qsI-ro-ZxK">
+                                                <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                                                <font key="font" metaFont="system"/>
+                                            </buttonCell>
+                                            <connections>
+                                                <action selector="switchCompositingOperation:" target="XfG-lQ-9wD" id="dzp-m3-Dgg"/>
+                                            </connections>
+                                        </button>
+                                    </subviews>
+                                </view>
+                            </box>
                         </subviews>
                         <constraints>
                             <constraint firstItem="ODL-kq-28H" firstAttribute="top" secondItem="m2S-Jp-Qdl" secondAttribute="top" constant="20" id="ohG-aY-WBu"/>
                             <constraint firstItem="ODL-kq-28H" firstAttribute="leading" secondItem="m2S-Jp-Qdl" secondAttribute="leading" constant="20" id="zrq-bh-mY6"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="image_demo_view" destination="ODL-kq-28H" id="Yrx-SC-hkm"/>
+                    </connections>
                 </viewController>
                 <customObject id="rPt-NT-nkU" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="75" y="797"/>
+            <point key="canvasLocation" x="158.5" y="797"/>
         </scene>
     </scenes>
 </document>
