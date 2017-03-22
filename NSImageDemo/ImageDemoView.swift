@@ -63,10 +63,36 @@ class ImageDemoView: NSView {
                                             endAngle: 2.0*CGFloat(M_PI),
                                             clockwise: true)
                         clip_path.setClip()
+                        
+                        //set it as left semi-circle
+                        //NSBezierPath.clip(NSMakeRect(0, 0, rect.width / 2.0, rect.height))
+                        
+                        //set it as right semi-circle
+                        //NSBezierPath(rect: NSMakeRect(rect.width / 2.0, 0, rect.width / 2.0, rect.height)).addClip()
+                        
                         self.swift_medium_image.draw(at: NSZeroPoint, from: NSZeroRect, operation: .sourceOver, fraction: 1.0)
                         NSGraphicsContext.restoreGraphicsState()
                         return true
                         })
+    }()
+    
+    lazy var cpp_medium_circle_image : NSImage = {
+        return NSImage(size: NSSize(width: image_square_edge, height: image_square_edge),
+                       flipped: false,
+                       drawingHandler: {rect in
+                        NSGraphicsContext.saveGraphicsState()
+                        let clip_path = NSBezierPath()
+                        clip_path.appendArc(withCenter: NSMakePoint(image_square_edge / 2.0, image_square_edge / 2.0),
+                                            radius: image_square_edge / 2.0 ,
+                                            startAngle: 0.0,
+                                            endAngle: 2.0*CGFloat(M_PI),
+                                            clockwise: true)
+                        clip_path.setClip()
+                        
+                        self.cpp_medium_image.draw(at: NSZeroPoint, from: NSZeroRect, operation: .sourceOver, fraction: 1.0)
+                        NSGraphicsContext.restoreGraphicsState()
+                        return true
+        })
     }()
   
     override func draw(_ dirtyRect: NSRect) {
@@ -75,7 +101,7 @@ class ImageDemoView: NSView {
         NSColor.green.set()
         NSBezierPath(rect: dirtyRect).fill()
         swift_medium_circle_image.draw(at: top_left_image_origin, from: NSZeroRect, operation: top_left_operation, fraction: 1.0)
-        cpp_medium_image.draw(at: bottom_right_image_origin, from: NSZeroRect, operation: bottom_right_operation, fraction: 1.0)
+        cpp_medium_circle_image.draw(at: bottom_right_image_origin, from: NSZeroRect, operation: bottom_right_operation, fraction: 1.0)
     }
     
 }
